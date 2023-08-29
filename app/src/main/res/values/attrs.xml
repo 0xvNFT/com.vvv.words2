@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="ControllerView">
+        <attr name="button1" format="string" />
+        <attr name="button2" format="string" />
+        <attr name="button3" format="string" />
+        <attr name="button4" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ButtonTextViews">
+        <attr name="strokes" format="float" />
+    </declare-styleable>
+</resources>
