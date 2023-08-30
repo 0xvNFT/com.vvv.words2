@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "498637658573",
+    "project_id": "words2-5fc8a",
+    "storage_bucket": "words2-5fc8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498637658573:android:24c3a9d9e45c47bfa50c84",
+        "android_client_info": {
+          "package_name": "com.vvv.words2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498637658573-p09qt7mv78qbke83fmeu9b7tu6o25rft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-O0RdPj9YH5U6IEdkcJhWWF7ggLYibck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498637658573-p09qt7mv78qbke83fmeu9b7tu6o25rft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
