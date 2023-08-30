@@ -13,6 +13,7 @@ import com.vvv.words2.R;
 import com.vvv.words2.Views.BubbleGridView;
 import com.vvv.words2.Views.SwipeView;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class LevelFetcherActivity extends AppCompatActivity implements SwipeView
     private final List<WordModel> passTheWordList = new ArrayList<>();
     int score = 0;
     TextView score_txt;
+    TextView wordCount;
     private BubbleGridView gridLayout;
     private List<WordModel> wordsList = new ArrayList<>();
 
@@ -40,6 +42,9 @@ public class LevelFetcherActivity extends AppCompatActivity implements SwipeView
         Gson gson = new Gson();
         wordsList = gson.fromJson(getIntent().getStringExtra("words"), new TypeToken<List<WordModel>>() {
         }.getType());
+        String wordCountFormat = getString(R.string.word_count_format);
+        String wordCountText = String.format(wordCountFormat, passTheWordList.size(), wordsList.size());
+        wordCount.setText(wordCountText);
         if (wordsList != null && !wordsList.isEmpty()) {
             SwipeView controller = findViewById(R.id.controller);
             controller.setGridVal(this);
@@ -59,6 +64,7 @@ public class LevelFetcherActivity extends AppCompatActivity implements SwipeView
 
     public void InitializeGridsAndButtons() {
         score_txt = findViewById(R.id.score);
+        wordCount = findViewById(R.id.wordCount);
         gridLayout = findViewById(R.id.grid);
         gridLayout.setGrid(getIntent().getIntExtra("gridsize", 0));
     }
@@ -72,7 +78,10 @@ public class LevelFetcherActivity extends AppCompatActivity implements SwipeView
                 if (passTheWordList.size() == wordsList.size()) {
                     finish();
                 }
-                score_txt.setText(("Score: " + score));
+                score_txt.setText((MessageFormat.format("Score: {0}", score)));
+                String wordCountFormat = getString(R.string.word_count_format);
+                String wordCountText = String.format(wordCountFormat, passTheWordList.size(), wordsList.size());
+                wordCount.setText(wordCountText);
             }
         }
     }
