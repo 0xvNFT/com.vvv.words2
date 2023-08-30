@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.vvv.words2.Dialogs.LevelCompleteDialog;
 import com.vvv.words2.Models.WordModel;
 import com.vvv.words2.R;
 import com.vvv.words2.Views.BubbleGridView;
@@ -76,7 +77,9 @@ public class LevelFetcherActivity extends AppCompatActivity implements SwipeView
                 gridLayout.setWords(passTheWordList);
                 score += 10;
                 if (passTheWordList.size() == wordsList.size()) {
-                    finish();
+                    //finish();
+                    LevelCompleteDialog dialog = new LevelCompleteDialog();
+                    dialog.show(getSupportFragmentManager(), "level_complete_dialog");
                 }
                 score_txt.setText((MessageFormat.format("Score: {0}", score)));
                 String wordCountFormat = getString(R.string.word_count_format);
